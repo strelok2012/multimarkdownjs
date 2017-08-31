@@ -39,12 +39,12 @@ MultiMarkdown.setLanguage(LANG);
 ```
 Supported languages:
 
-* MultiMarkdown.languages.ENGLISH
-* MultiMarkdown.languages.DUTCH
-* MultiMarkdown.languages.FRENCH
-* MultiMarkdown.languages.GERMAN
-* MultiMarkdown.languages.GERMANGUILL
-* MultiMarkdown.languages.SWEDISH
+* `MultiMarkdown.languages.ENGLISH`
+* `MultiMarkdown.languages.DUTCH`
+* `MultiMarkdown.languages.FRENCH`
+* `MultiMarkdown.languages.GERMAN`
+* `MultiMarkdown.languages.GERMANGUILL`
+* `MultiMarkdown.languages.SWEDISH`
 
 ## How to build
 If you want to build library yourself, you'll need to install latest [Emscripten SDK](https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html#linux-and-mac-os-x).
