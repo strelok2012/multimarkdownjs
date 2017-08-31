@@ -1,37 +1,59 @@
-## Welcome to GitHub Pages
+## multimarkdownjs
 
-You can use the [editor on GitHub](https://github.com/strelok2012/multimarkdownjs/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+> NOTE: I don't think that you can use this library for production now, due to BIG size (~780 kB in asm.js version and ~350 for WASM version). But we work on it!
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+If you want to use this library, just include `dist/multimarkdown.asm.js`.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+Then, you can use it like:
+```javascript
+var html = MultiMarkdown.render("## Hello world!");
 ```
+If you want to set extensions, just call:
+```javascript
+MultiMarkdown.setExtensions(FLAG1 | FLAG2 | ...);
+```
+Extensions flags table:
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+| Flag | Description |
+| --- | --- |
+|EXT_COMPATIBILITY|Markdown compatibility mode|
+|EXT_COMPLETE|Create complete document|
+|EXT_SNIPPET(*Default*)|Create snippet only|
+|EXT_SMART|Enable Smart quotes|
+|EXT_NOTES|Enable Footnotes|
+|EXT_NO_LABELS|Don't add anchors to headers, etc.|
+|EXT_PROCESS_HTML|Process Markdown inside HTML|
+|EXT_NO_METADATA|Don't parse Metadata|
+|EXT_OBFUSCATE|Mask email addresses|
+|EXT_CRITIC|Critic Markup Support|
+|EXT_CRITIC_ACCEPT|Accept all proposed changes|
+|EXT_CRITIC_REJECT|Reject all proposed changes|
+|EXT_RANDOM_FOOT|Use random numbers for footnote links|
+|EXT_TRANSCLUDE(*Unused*)|Perform transclusion(s)|
 
-### Jekyll Themes
+Extension flags can be accessed as `MultiMarkdown.extensions.FLAG`
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/strelok2012/multimarkdownjs/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+If you use `Smart qoutes` extenstion, you can set `Smart quotes` language as:
+```javascript
+MultiMarkdown.setLanguage(LANG);
+```
+Supported languages:
 
-### Support or Contact
+* `MultiMarkdown.languages.ENGLISH`
+* `MultiMarkdown.languages.DUTCH`
+* `MultiMarkdown.languages.FRENCH`
+* `MultiMarkdown.languages.GERMAN`
+* `MultiMarkdown.languages.GERMANGUILL`
+* `MultiMarkdown.languages.SWEDISH`
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## How to build
+If you want to build library yourself, you'll need to install latest [Emscripten SDK](https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html#linux-and-mac-os-x).
+
+Then call `git submodule update --init --recursive`.
+
+Then you can call `./build.sh [asm|wasm]` - calling without options will build for asm.js and WASM simultaneously.
+
+You can find result files in `dist` folder.
+
+
+
