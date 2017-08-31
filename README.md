@@ -1,6 +1,7 @@
 ## multimarkdownjs
+A [MultiMarkdown-6](https://en.wikipedia.org/wiki/MultiMarkdown) JS parser.
 
-Online [demo](https://strelok2012.github.io/multimarkdownjs)
+[Demo](https://strelok2012.github.io/multimarkdownjs)
 
 > NOTE: I don't think that you can use this library for production now, due to BIG size (~780 kB in asm.js version and ~350 for WASM version). But we work on it!
 
