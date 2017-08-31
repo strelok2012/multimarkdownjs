@@ -2,13 +2,13 @@
 <html lang="en-us">
   <head>
 	<meta charset="UTF-8">
-	<title>JavaScript Markdown Editor - SimpleMDE</title>
+	<title>multimarkdownjs - Emscripten port of MultiMarkdown-6</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-	<link rel="stylesheet" type="text/css" href="/stylesheets/github-light.css" media="screen">
-	<link rel="canonical" href="https://simplemde.com/" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+	<link rel="canonical" href="https://strelok2012.github.io/multimarkdownjs/" />
 	
 	<style>
 	.editor-preview h1,
@@ -30,76 +30,439 @@
   </head>
   <body>
 	<section class="page-header">
-	  <h1 class="project-name">SimpleMDE Markdown Editor</h1>
-	  <h2 class="project-tagline">SimpleMDE is a simple, embeddable, and beautiful JS markdown editor</h2>
-	  <a href="https://github.com/sparksuite/simplemde-markdown-editor" class="btn">View on GitHub</a>
-	  <a href="https://github.com/sparksuite/simplemde-markdown-editor/zipball/master" class="btn">Download .zip</a>
-	  <a href="https://github.com/sparksuite/simplemde-markdown-editor/tarball/master" class="btn">Download .tar.gz</a>
+	  <h1 class="project-name">multimarkdownjs</h1>
+	  <h2 class="project-tagline">Emscripten port of MultiMarkdown-6</h2>
+	  <a href="https://github.com/strelok2012/multimarkdownjs" class="btn">View on GitHub</a>
+	  <a href="https://github.com/strelok2012/multimarkdownjs/zipball/master" class="btn">Download .zip</a>
+	  <a href="https://github.com/strelok2012/multimarkdownjs/tarball/master" class="btn">Download .tar.gz</a>
 	</section>
 
 	<section class="main-content">
-	  <h1><a id="h1_demo1" class="anchor" href="#h1_demo1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h1>
+	  <h1><a id="h1_demo1" class="anchor" href="#h1_demo1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Text</h1>
 
-<textarea id="demo1"># Intro
-Go ahead, play around with the editor! Be sure to check out **bold** and *italic* styling, or even [links](https://google.com). You can type the Markdown syntax, use the toolbar, or use shortcuts like `cmd-b` or `ctrl-b`.
+<textarea id="demo1">
+This text is **bold**.
 
-## Lists
-Unordered lists can be started using the toolbar or by typing `* `, `- `, or `+ `. Ordered lists can be started by typing `1. `.
+This text is also __bold__.
 
-#### Unordered
-* Lists are a piece of cake
-* They even auto continue as you type
-* A double enter will end them
-* Tabs and shift-tabs work too
+This text is *italicized*.
 
-#### Ordered
-1. Numbered lists...
-2. ...work too!
+This itext is also _italicized_.
 
-## What about images?
-![Yes](https://i.imgur.com/sZlktY7.png)</textarea>
+`This is some code.`
 
-<h1><a id="h1_demo2" class="anchor" href="#h1_demo2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Autosaving</h1>
+	This is a longer
+	section of code
+	on multiple lines.
 
-<textarea id="demo2"># This one autosaves!
-By default, it saves every 10 seconds, but this can be changed. When this textarea is included in a form, it will automatically forget the saved value when the form is submitted.</textarea>
+m^2
 
-<h1><a id="h1_demo3" class="anchor" href="#h1_demo3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hidden toolbar and status bar</h1>
+x^2,y^
 
-<textarea id="demo3"># This one is bare
-You can also choose to hide the statusbar and/or toolbar for a simple and clean appearance. This one also checks for misspelled words as you type!</textarea>
+x~z
+
+C~6~H~12~O~6
+
+Escaped characters -- \&
+
+"smart quotes"
+
+'smart quotes'
+
+apostrophe's
+
+en -- dash
+
+em --- dash
+
+ellipsis ...
+
+# Abbreviations
+HTML and HTML
+
+[>HTML]: Hypertext Markup Language
+
+[>(HTML) Hypertext Markup Language] and HTML
+
+# Blockquotes
+Regular text.
+
+> Blockquote
+> with two lines.
+And one more line.
+>> And a second level blockquote.
+
+# Critic markup
+
+This {++is ++}a test.
+
+This is {--is --}a test.
+
+This {~~isn't~>is~~} a test.
+
+This is a {==test==}.
+
+This is a test.{>>What is it a test of?<<}
+
+# Definition lists
+Apple
+:   Pomaceous fruit of plants of the genus Malus in 
+    the family Rosaceae.
+
+    Also the makers of really great products.
+    
+    
+# Fenced code blocks
+```
+This is a fenced
+code block.
+```
+
+```perl
+# Demonstrate Syntax Highlighting if you link to highlight.js #
+# http://softwaremaniacs.org/soft/highlight/en/
+print "Hello, world!\n";
+$a = 0;
+while ($a < 10) {
+print "$a...\n";
+$a++;
+}
+```
+
+# Headings
+
+# H1 Header
+## H2 Header ##
+# Header with custom id [custom]
+H1 Header
+=========
+H2 Header
+---------
+
+# Horizontal rules
+---
+- - - 
+****
+* * * * * * 
+______
+_ _ _ _ 
+
+# Line breaks
+foo
+bar
+
+foo  
+bar
+
+foo\
+bar
+
+# Links
+Link to [MMD](http://fletcherpenney.net/mmd)
+
+Link to [MultiMarkdown][MMD1].
+
+[MMD1]: http://fletcherpenney.net/mmd
+
+Link to [MMD2][].
+
+[MMD2]: http://fletcherpenney.net/mmd
+
+Link to [MMD3].
+
+[MMD3]: http://fletcherpenney.net/mmd
+
+Link to [MMD4].
+
+[MMD4]: http://fletcherpenney.net/mmd style="border: solid black 1px;"
+
+Link to <http://fletcherpenney.net/mmd>
+	
+<foo@example.com>
+
+</textarea>
+
+<h1><a id="h1_demo2" class="anchor" href="#h1_demo2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Citations</h1>
+
+<textarea id="demo2">
+Cite a source.[p. 42][#source]
+
+[#source]: John Doe. *A Totally Fake Book*. Vanity Press, 2006.
+
+Cite a source.[p. 42][#John Doe. *A Totally Fake Book, Part 2*. Vanity Press, 2008.]
+
+</textarea>
+
+<h1><a id="h1_demo3" class="anchor" href="#h1_demo3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cross references</h1>
+
+<textarea id="demo3">
+# Intro #
+
+# Conclusion [fin] #
+
+Link to [Intro].
+
+Link to the [end][fin].
+
+</textarea>
+
+<h1><a id="h1_demo4" class="anchor" href="#h1_demo4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Foot notes</h1>
+
+<textarea id="demo4">
+Text.[^foot]
+
+[^foot]: This is a footnote.
+
+Text.[^This is an inline footnote.]
+
+</textarea>
+
+<h1><a id="h1_demo5" class="anchor" href="#h1_demo5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Glossary</h1>
+
+<textarea id="demo5">
+[?Glossary] is a glossary term.
+
+[?Glossary]: The glossary collects information about
+important terms used in your documemnt.
+
+[?(Glossary) The glossary collects information
+about important terms used in your documemnt]
+is a glossary term.
+
+</textarea>
+
+
+<h1><a id="h1_demo6" class="anchor" href="#h1_demo6" aria-hidden="true"><span class="octicon octicon-link"></span></a>HTML Blocks</h1>
+<textarea id="demo6">
+<div>*bar*</div>
+
+<div>
+*bar*
+</div>
+
+foo
+<div>
+*bar*
+</div>
+
+<div>
+*bar*
+
+</div>
+
+<div>
+
+*bar*
+
+</div>
+
+<del>*bar*</del>
+
+<del>
+*bar*
+</del>
+
+foo
+<del>
+*bar*
+</del>
+
+
+<del>
+*bar*
+
+</del>
+
+<del>
+
+*bar*
+
+</del>
+</textarea>
+
+<h1><a id="h1_demo7" class="anchor" href="#h1_demo7" aria-hidden="true"><span class="octicon octicon-link"></span></a>Images</h1>
+<textarea id="demo7">
+Image - ![image](https://i.imgur.com/sZlktY7.png)
+
+Image with title - ![image](https://i.imgur.com/sZlktY7.png "This is a title")
+
+Image with attributes - ![image].
+
+[image]: https://i.imgur.com/sZlktY7.png "This is a title" height=22px width=60px
+
+Image by itself becomes a figure.
+
+![This is the caption][image]
+
+[image]: https://i.imgur.com/sZlktY7.png "This is the title" height=45px width=120px
+</textarea>
+
+<h1><a id="h1_demo8" class="anchor" href="#h1_demo8" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lists</h1>
+<textarea id="demo8">
+* one
+* two
+	* a
+	    * c
+	    * d
+	* b
+* three
+
+1. one
+2. two
+	1. a
+	    1. c
+	    2. d
+	2. b
+3. three
+
+</textarea>
+
+
+<h1><a id="h1_demo9" class="anchor" href="#h1_demo9" aria-hidden="true"><span class="octicon octicon-link"></span></a>Math</h1>
+<textarea id="demo9">
+A formula, \\({e}^{i\pi }+1=0\\), inside a paragraph.
+
+A formula, ${e}^{i\pi }+1=0$, inside a paragraph.
+
+\\[{e}^{i\pi }+1=0\\]
+\[{e}^{i\pi }+1=0\]
+
+$${e}^{i\pi }+1=0$$
+</textarea>
+
+<h1><a id="h1_demo10" class="anchor" href="#h1_demo10" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table of contents</h1>
+<textarea id="demo10">
+# Table of Contents #
+
+{{TOC}}
+
+# Intro #
+
+# Conclusion #
+</textarea>
+
+<h1><a id="h1_demo11" class="anchor" href="#h1_demo11" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tables</h1>
+<textarea id="demo11">
+| foo | bar |
+| --- | --- |
+| foo | bar |
+| foo bar  ||
+[*caption*][id]
+
+| longer header | longer header| longer header |
+| ---: | :---: | :--- |
+| foo | bar | bat |
+
+| foo | bar | bat |
+[*caption*][id]
+</textarea>
 
 	  <footer class="site-footer">
-		<span class="site-footer-credits"><a href="https://github.com/sparksuite/simplemde-markdown-editor">SimpleMDE Markdown Editor</a> is created and maintained by <a href="https://github.com/sparksuite">Sparksuite</a></span>
+		<span class="site-footer-credits">Great thanks to <a href="https://github.com/fletcher/MultiMarkdown-6">MultiMarkdown-6</a> and <a href="https://github.com/sparksuite/simplemde-markdown-editor">SimpleMDE Markdown Editor</a>!</span>
 	  </footer>
 
 	</section>
+	
+	
+	<script>
+		function initSimpleMDE(){
+			
+			MultiMarkdown.setExtensions(MultiMarkdown.extensions.EXT_CRITIC | MultiMarkdown.extensions.EXT_NOTES | MultiMarkdown.extensions.EXT_SMART);
+			
+			new SimpleMDE({
+				element: document.getElementById("demo1"),
+				spellChecker: false,
+				previewRender : function (plainText) {
+                    return MultiMarkdown.render(plainText);
+                }
+			});
+			
+			new SimpleMDE({
+				element: document.getElementById("demo2"),
+				spellChecker: false,
+				previewRender : function (plainText) {
+                    return MultiMarkdown.render(plainText);
+                }
+			});
+			
+			new SimpleMDE({
+				element: document.getElementById("demo3"),
+				spellChecker: false,
+				previewRender : function (plainText) {
+                    return MultiMarkdown.render(plainText);
+                }
+			});
+			
+			new SimpleMDE({
+				element: document.getElementById("demo4"),
+				spellChecker: false,
+				previewRender : function (plainText) {
+                    return MultiMarkdown.render(plainText);
+                }
+			});
+			
+			new SimpleMDE({
+				element: document.getElementById("demo5"),
+				spellChecker: false,
+				previewRender : function (plainText) {
+                    return MultiMarkdown.render(plainText);
+                }
+			});
+			
+			new SimpleMDE({
+				element: document.getElementById("demo6"),
+				spellChecker: false,
+				previewRender : function (plainText) {
+                    return MultiMarkdown.render(plainText);
+                }
+			});
+			
+			new SimpleMDE({
+				element: document.getElementById("demo7"),
+				spellChecker: false,
+				previewRender : function (plainText) {
+                    return MultiMarkdown.render(plainText);
+                }
+			});
+			
+			new SimpleMDE({
+				element: document.getElementById("demo8"),
+				spellChecker: false,
+				previewRender : function (plainText) {
+                    return MultiMarkdown.render(plainText);
+                }
+			});
+			
+			new SimpleMDE({
+				element: document.getElementById("demo9"),
+				spellChecker: false,
+				previewRender : function (plainText) {
+                    return MultiMarkdown.render(plainText);
+                }
+			});
+			
+			new SimpleMDE({
+				element: document.getElementById("demo10"),
+				spellChecker: false,
+				previewRender : function (plainText) {
+                    return MultiMarkdown.render(plainText);
+                }
+			});
+			
+			new SimpleMDE({
+				element: document.getElementById("demo11"),
+				spellChecker: false,
+				previewRender : function (plainText) {
+                    return MultiMarkdown.render(plainText);
+                }
+			});
+		}
+	</script>	
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 	<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-	
-	<script>
-	new SimpleMDE({
-		element: document.getElementById("demo1"),
-		spellChecker: false,
-	});
-	
-	new SimpleMDE({
-		element: document.getElementById("demo2"),
-		spellChecker: false,
-		autosave: {
-			enabled: true,
-			unique_id: "demo2",
-		},
-	});
-	
-	new SimpleMDE({
-		element: document.getElementById("demo3"),
-		status: false,
-		toolbar: false,
-	});
-	</script>
+	<script onload="initSimpleMDE()" src="js/multimarkdown.asm.js"></script>
 	
   </body>
 </html>
