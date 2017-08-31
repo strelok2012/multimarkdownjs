@@ -47,11 +47,9 @@ Supported languages:
 * `MultiMarkdown.languages.SWEDISH`
 
 ## How to build
-If you want to build library yourself, you'll need to install latest [Emscripten SDK](https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html#linux-and-mac-os-x).
+> If you want to build library yourself, you'll need to install latest [Emscripten SDK](https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html#linux-and-mac-os-x).
 
-Then call `git submodule update --init --recursive`.
-
-Then you can call `./build.sh [asm|wasm]` - calling without options will build for asm.js and WASM simultaneously.
+Just call `./build.sh [asm|wasm]` - calling without options will build for asm.js and WASM simultaneously.
 
 You can find result files in `dist` folder.
 
