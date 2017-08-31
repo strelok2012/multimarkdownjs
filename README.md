@@ -1,5 +1,7 @@
 ## multimarkdownjs
 
+Online [demo](https://strelok2012.github.io/multimarkdownjs)
+
 > NOTE: I don't think that you can use this library for production now, due to BIG size (~780 kB in asm.js version and ~350 for WASM version). But we work on it!
 
 If you want to use this library, just include `dist/multimarkdown.asm.js`.
