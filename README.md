@@ -10,7 +10,7 @@ Then, you can use it like:
 ```javascript
 var html = MultiMarkdown.render("## Hello world!");
 ```
-If you want to set extensions, just call:
+To set extension flags call:
 ```javascript
 MultiMarkdown.setExtensions(FLAG1 | FLAG2 | ...);
 ```
