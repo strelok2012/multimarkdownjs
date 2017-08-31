@@ -14,7 +14,7 @@ If you want to set extensions, just call:
 ```javascript
 MultiMarkdown.setExtensions(FLAG1 | FLAG2 | ...);
 ```
-Extensions flags table:
+Extension flags table:
 
 | Flag | Description |
 | --- | --- |
